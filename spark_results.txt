@@ -1,0 +1,391 @@
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/11/07 15:24:42 INFO SparkContext: Running Spark version 4.2.0
+26/11/07 15:24:42 INFO SparkContext: OS info Windows 11, 10.0, amd64
+26/11/07 15:24:42 INFO SparkContext: Java version 21.0.12.1+1-LTS-4
+26/11/07 15:24:42 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+26/11/07 15:24:42 INFO ResourceUtils: ==============================================================
+26/11/07 15:24:42 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/11/07 15:24:42 INFO ResourceUtils: ==============================================================
+26/11/07 15:24:42 INFO SparkContext: Submitted application: StudentAnalysis
+26/11/07 15:24:42 INFO SecurityManager: Changing view acls to: osaid
+26/11/07 15:24:42 INFO SecurityManager: Changing modify acls to: osaid
+26/11/07 15:24:42 INFO SecurityManager: Changing view acls groups to: osaid
+26/11/07 15:24:42 INFO SecurityManager: Changing modify acls groups to: osaid
+26/11/07 15:24:42 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: osaid groups with view permissions: EMPTY; users with modify permissions: osaid; groups with modify permissions: EMPTY; RPC SSL disabled
+26/11/07 15:24:42 INFO Utils: Successfully started service 'sparkDriver' on port 54170.
+26/11/07 15:24:42 INFO SparkEnv: Registering MapOutputTracker
+26/11/07 15:24:42 INFO SparkEnv: Registering BlockManagerMaster
+26/11/07 15:24:42 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/11/07 15:24:42 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/11/07 15:24:42 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/11/07 15:24:42 INFO DiskBlockManager: Created local directory at C:\Users\osaid\AppData\Local\Temp\blockmgr-4d7a246a-0957-4409-a6fb-9f2bea84cc36
+26/11/07 15:24:43 INFO SparkEnv: Registering OutputCommitCoordinator
+26/11/07 15:24:43 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/11/07 15:24:43 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/11/07 15:24:43 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/11/07 15:24:43 INFO ResourceProfile: Limiting resource is cpu
+26/11/07 15:24:43 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/11/07 15:24:43 INFO SecurityManager: Changing view acls to: osaid
+26/11/07 15:24:43 INFO SecurityManager: Changing modify acls to: osaid
+26/11/07 15:24:43 INFO SecurityManager: Changing view acls groups to: osaid
+26/11/07 15:24:43 INFO SecurityManager: Changing modify acls groups to: osaid
+26/11/07 15:24:43 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: osaid groups with view permissions: EMPTY; users with modify permissions: osaid; groups with modify permissions: EMPTY; RPC SSL disabled
+26/11/07 15:24:43 INFO Executor: Starting executor ID driver on host OSAID
+26/11/07 15:24:43 INFO Executor: Running Spark version 4.2.0
+26/11/07 15:24:43 INFO Executor: OS info Windows 11, 10.0, amd64
+26/11/07 15:24:43 INFO Executor: Java version 21.0.12.1+1-LTS-4
+26/11/07 15:24:43 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/11/07 15:24:43 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@6fd1ea75 for default.
+26/11/07 15:24:43 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 54171.
+26/11/07 15:24:43 INFO NettyBlockTransferService: Server created on OSAID:54171
+26/11/07 15:24:43 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/11/07 15:24:43 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, OSAID, 54171, None)
+26/11/07 15:24:43 INFO BlockManagerMasterEndpoint: Registering block manager OSAID:54171 with 4.5 GiB RAM, BlockManagerId(driver, OSAID, 54171, None)
+26/11/07 15:24:43 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, OSAID, 54171, None)
+26/11/07 15:24:43 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, OSAID, 54171, None)
+Total students: 100
+root
+ |-- _id: integer (nullable = true)
+ |-- courseIds: array (nullable = true)
+ |    |-- element: integer (containsNull = true)
+ |-- dateOfBirth: timestamp (nullable = true)
+ |-- firstName: string (nullable = true)
+ |-- gpa: double (nullable = true)
+ |-- lastName: string (nullable = true)
+
+SQL View created successfully
+
+Students registered in Course 103:
++---+---------+--------+---+
+|_id|firstName|lastName|gpa|
++---+---------+--------+---+
+|22 |Victoria |Anderson|3.1|
+|51 |Yasmine  |Baker   |3.1|
+|41 |Olivia   |Bell    |3.4|
+|87 |Isabella |Bell    |3.1|
+|36 |James    |Brooks  |3.5|
+|96 |Rachel   |Brooks  |3.5|
+|17 |Quinn    |Brown   |3.6|
+|48 |Victoria |Butler  |3.5|
+|81 |Chloe    |Butler  |3.9|
+|58 |Felix    |Cook    |3.1|
+|99 |Uriel    |Cook    |3.1|
+|25 |Yasmine  |Cooper  |3.2|
+|5  |Eric     |Davis   |3.1|
+|19 |Samuel   |Evans   |3.8|
+|39 |Mia      |Fisher  |3.1|
+|49 |William  |Fisher  |3.2|
+|72 |Taylor   |Fisher  |3.5|
+|45 |Samuel   |Foster  |3.9|
+|53 |Ava      |Gonzalez|3.4|
+|74 |Victoria |Gonzalez|3.9|
+|12 |Liam     |Hall    |3.2|
+|34 |Henry    |Hall    |3.1|
+|60 |Henry    |Howard  |3.5|
+|1  |Alice    |Johnson |3.8|
+|14 |Noah     |Johnson |3.1|
+|8  |Hannah   |Lee     |3.6|
+|65 |Mia      |Lopez   |3.4|
+|27 |Ava      |Parker  |3.1|
+|84 |Felix    |Parker  |3.5|
+|29 |Chloe    |Reed    |3.4|
+|69 |Quinn    |Reed    |3.9|
+|63 |Katherine|Stewart |3.1|
+|91 |Mia      |Ward    |3.8|
+|3  |Charlie  |Williams|3.2|
+|77 |Yasmine  |Young   |3.4|
+|94 |Peter    |Young   |3.1|
++---+---------+--------+---+
+
+Total matches: 36
+
+Students with GPA greater than 3.5:
++---+---------+--------+---+
+|_id|firstName|lastName|gpa|
++---+---------+--------+---+
+|4  |Diana    |Miller  |3.9|
+|13 |Mia      |Evans   |3.9|
+|21 |Uriel    |Moore   |3.9|
+|26 |Zachary  |Lewis   |3.9|
+|33 |Grace    |Russell |3.9|
+|38 |Liam     |Roberts |3.9|
+|45 |Samuel   |Foster  |3.9|
+|50 |Xavier   |Perez   |3.9|
+|57 |Emma     |Hall    |3.9|
+|62 |James    |Hill    |3.9|
+|69 |Quinn    |Reed    |3.9|
+|74 |Victoria |Gonzalez|3.9|
+|81 |Chloe    |Butler  |3.9|
+|86 |Henry    |Gonzalez|3.9|
+|93 |Olivia   |Baker   |3.9|
+|98 |Taylor   |Perez   |3.9|
+|1  |Alice    |Johnson |3.8|
+|10 |Jack     |Clark   |3.8|
+|19 |Samuel   |Evans   |3.8|
+|31 |Emma     |Turner  |3.8|
+|43 |Quinn    |Cooper  |3.8|
+|55 |Chloe    |Adams   |3.8|
+|67 |Olivia   |Young   |3.8|
+|79 |Ava      |Gonzalez|3.8|
+|91 |Mia      |Ward    |3.8|
+|6  |Fiona    |Moore   |3.7|
+|15 |Olivia   |Smith   |3.7|
+|23 |William  |Thomas  |3.7|
+|28 |Benjamin |Ward    |3.7|
+|35 |Isabella |Perez   |3.7|
+|40 |Nathan   |Young   |3.7|
+|47 |Uriel    |Martin  |3.7|
+|52 |Zachary  |Murphy  |3.7|
+|59 |Grace    |Fisher  |3.7|
+|64 |Liam     |Fisher  |3.7|
+|71 |Samuel   |Moore   |3.7|
+|76 |Xavier   |Reed    |3.7|
+|83 |Emma     |Adams   |3.7|
+|88 |James    |Stewart |3.7|
+|95 |Quinn    |Ward    |3.7|
+|100|Victoria |Fisher  |3.7|
+|8  |Hannah   |Lee     |3.6|
+|17 |Quinn    |Brown   |3.6|
+|30 |Daniel   |Murphy  |3.6|
+|42 |Peter    |Williams|3.6|
+|54 |Benjamin |Evans   |3.6|
+|66 |Nathan   |Reed    |3.6|
+|78 |Zachary  |Howard  |3.6|
+|90 |Liam     |Hall    |3.6|
++---+---------+--------+---+
+
+Total matches: 49
+
+Enrollments:
++---------+--------+---+
+|studentId|courseId|gpa|
++---------+--------+---+
+|1        |101     |3.8|
+|1        |102     |3.8|
+|1        |103     |3.8|
+|2        |102     |3.5|
+|2        |104     |3.5|
+|2        |105     |3.5|
+|3        |101     |3.2|
+|3        |103     |3.2|
+|3        |105     |3.2|
+|4        |101     |3.9|
++---------+--------+---+
+only showing top 10 rows
+
+Course Statistics:
++--------+---------------+----------+------+------+
+|courseId|enrollmentCount|averageGpa|minGpa|maxGpa|
++--------+---------------+----------+------+------+
+|101     |48             |3.56      |3.1   |3.9   |
+|105     |47             |3.5       |3.1   |3.9   |
+|104     |44             |3.59      |3.1   |3.9   |
+|102     |43             |3.5       |3.1   |3.9   |
+|103     |36             |3.39      |3.1   |3.9   |
++--------+---------------+----------+------+------+
+
+
+Student Course Distribution:
++---------------+------------+
+|numberOfCourses|studentCount|
++---------------+------------+
+|1              |8           |
+|2              |66          |
+|3              |26          |
++---------------+------------+
+
+
+Students by Birth Year:
++---------+------------+----------+
+|birthYear|studentCount|averageGpa|
++---------+------------+----------+
+|1997     |47          |3.54      |
+|1998     |29          |3.5       |
+|1999     |24          |3.45      |
++---------+------------+----------+
+
+
+Top Students in Each Course:
++--------+---------+---+-----------+
+|courseId|studentId|gpa|studentRank|
++--------+---------+---+-----------+
+|101     |4        |3.9|1          |
+|101     |21       |3.9|1          |
+|101     |33       |3.9|1          |
+|101     |38       |3.9|1          |
+|101     |45       |3.9|1          |
+|101     |57       |3.9|1          |
+|101     |62       |3.9|1          |
+|101     |74       |3.9|1          |
+|101     |81       |3.9|1          |
+|101     |93       |3.9|1          |
+|101     |1        |3.8|2          |
+|101     |10       |3.8|2          |
+|101     |19       |3.8|2          |
+|101     |31       |3.8|2          |
+|101     |43       |3.8|2          |
+|101     |55       |3.8|2          |
+|101     |91       |3.8|2          |
+|101     |23       |3.7|3          |
+|101     |40       |3.7|3          |
+|101     |47       |3.7|3          |
+|101     |64       |3.7|3          |
+|101     |76       |3.7|3          |
+|101     |83       |3.7|3          |
+|101     |95       |3.7|3          |
+|102     |4        |3.9|1          |
+|102     |13       |3.9|1          |
+|102     |21       |3.9|1          |
+|102     |26       |3.9|1          |
+|102     |69       |3.9|1          |
+|102     |74       |3.9|1          |
+|102     |86       |3.9|1          |
+|102     |1        |3.8|2          |
+|102     |10       |3.8|2          |
+|102     |31       |3.8|2          |
+|102     |43       |3.8|2          |
+|102     |55       |3.8|2          |
+|102     |79       |3.8|2          |
+|102     |6        |3.7|3          |
+|102     |23       |3.7|3          |
+|102     |52       |3.7|3          |
+|102     |71       |3.7|3          |
+|102     |100      |3.7|3          |
+|103     |45       |3.9|1          |
+|103     |69       |3.9|1          |
+|103     |74       |3.9|1          |
+|103     |81       |3.9|1          |
+|103     |1        |3.8|2          |
+|103     |19       |3.8|2          |
+|103     |91       |3.8|2          |
+|103     |8        |3.6|3          |
+|103     |17       |3.6|3          |
+|104     |4        |3.9|1          |
+|104     |13       |3.9|1          |
+|104     |21       |3.9|1          |
+|104     |26       |3.9|1          |
+|104     |33       |3.9|1          |
+|104     |45       |3.9|1          |
+|104     |50       |3.9|1          |
+|104     |57       |3.9|1          |
+|104     |86       |3.9|1          |
+|104     |19       |3.8|2          |
+|104     |79       |3.8|2          |
+|104     |6        |3.7|3          |
+|104     |28       |3.7|3          |
+|104     |35       |3.7|3          |
+|104     |40       |3.7|3          |
+|104     |47       |3.7|3          |
+|104     |52       |3.7|3          |
+|104     |59       |3.7|3          |
+|104     |64       |3.7|3          |
+|104     |71       |3.7|3          |
+|104     |76       |3.7|3          |
+|104     |83       |3.7|3          |
+|104     |88       |3.7|3          |
+|104     |95       |3.7|3          |
+|105     |33       |3.9|1          |
+|105     |38       |3.9|1          |
+|105     |50       |3.9|1          |
+|105     |57       |3.9|1          |
+|105     |62       |3.9|1          |
+|105     |93       |3.9|1          |
+|105     |98       |3.9|1          |
+|105     |67       |3.8|2          |
+|105     |15       |3.7|3          |
+|105     |28       |3.7|3          |
+|105     |35       |3.7|3          |
+|105     |40       |3.7|3          |
+|105     |59       |3.7|3          |
+|105     |64       |3.7|3          |
+|105     |71       |3.7|3          |
+|105     |76       |3.7|3          |
+|105     |88       |3.7|3          |
+|105     |95       |3.7|3          |
+|105     |100      |3.7|3          |
++--------+---------+---+-----------+
+
+
+Students have same Names:
++--------+--------+---------+--------+-------------------+-------------------+
+|student1|student2|firstName|lastName|dob1               |dob2               |
++--------+--------+---------+--------+-------------------+-------------------+
+|53      |79      |Ava      |Gonzalez|1997-10-18 02:00:00|1997-03-28 03:00:00|
+|28      |80      |Benjamin |Ward    |1999-07-01 03:00:00|1999-08-16 03:00:00|
+|56      |82      |Daniel   |Martin  |1999-05-26 03:00:00|1998-01-22 02:00:00|
+|12      |90      |Liam     |Hall    |1997-12-27 02:00:00|1998-08-22 03:00:00|
+|16      |42      |Peter    |Williams|1998-01-14 02:00:00|1998-11-30 02:00:00|
+|18      |70      |Rachel   |Young   |1998-09-19 02:00:00|1999-09-20 02:00:00|
+|71      |97      |Samuel   |Moore   |1997-01-29 02:00:00|1997-04-09 03:00:00|
++--------+--------+---------+--------+-------------------+-------------------+
+
+
+Students Above All Course Averages:
++---------+---+
+|studentId|gpa|
++---------+---+
+|1        |3.8|
+|4        |3.9|
+|6        |3.7|
+|8        |3.6|
+|10       |3.8|
+|13       |3.9|
+|15       |3.7|
+|17       |3.6|
+|19       |3.8|
+|21       |3.9|
+|23       |3.7|
+|26       |3.9|
+|28       |3.7|
+|30       |3.6|
+|31       |3.8|
+|33       |3.9|
+|35       |3.7|
+|38       |3.9|
+|40       |3.7|
+|42       |3.6|
+|43       |3.8|
+|45       |3.9|
+|47       |3.7|
+|50       |3.9|
+|52       |3.7|
+|54       |3.6|
+|55       |3.8|
+|57       |3.9|
+|59       |3.7|
+|62       |3.9|
+|64       |3.7|
+|66       |3.6|
+|67       |3.8|
+|69       |3.9|
+|71       |3.7|
+|74       |3.9|
+|76       |3.7|
+|78       |3.6|
+|79       |3.8|
+|81       |3.9|
+|83       |3.7|
+|86       |3.9|
+|88       |3.7|
+|90       |3.6|
+|91       |3.8|
+|93       |3.9|
+|95       |3.7|
+|98       |3.9|
+|100      |3.7|
++---------+---+
+
+
+Part 4.4 - Save Course Statistics to MongoDB:
+
+Reading Course Statistics from MongoDB:
++------------------------+----------+--------+---------------+------+------+
+|_id                     |averageGpa|courseId|enrollmentCount|maxGpa|minGpa|
++------------------------+----------+--------+---------------+------+------+
+|6aef26a6e86c3f4c43184b6b|3.56      |101     |48             |3.9   |3.1   |
+|6aef26a6e86c3f4c43184b6c|3.5       |105     |47             |3.9   |3.1   |
+|6aef26a6e86c3f4c43184b6d|3.59      |104     |44             |3.9   |3.1   |
+|6aef26a6e86c3f4c43184b6e|3.5       |102     |43             |3.9   |3.1   |
+|6aef26a6e86c3f4c43184b6f|3.39      |103     |36             |3.9   |3.1   |
++------------------------+----------+--------+---------------+------+------+
+

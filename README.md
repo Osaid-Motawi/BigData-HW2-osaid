@@ -1,116 +1,54 @@
-# Student Records with MongoDB and Spark SQL
+# Homework 2: Student Records with MongoDB and Spark SQL
 
-**Big Data — Homework 2**
-
+**Course:** Big Data  
 **Student:** Osaid Mohammed Abdalghafer Motawi  
-**Project:** Student Records with MongoDB and Spark SQL
+**GitHub:** https://github.com/Osaid-Motawi/BigData-HW2-osaid
 
-## Project Overview
+## About the Project
 
-This project processes and analyzes 100 student records using MongoDB and Apache Spark SQL.
+In this homework, I worked with a CSV file containing 100 student records. I used Python and MongoDB to import and search the data, then used Scala and Apache Spark SQL to analyze the same records.
 
-The project has two main stages:
+## Tools
 
-1. **MongoDB:** Import student data, create indexes, and perform interactive searches.
-2. **Apache Spark SQL:** Read student records from MongoDB and perform analytical queries.
-
-## Technologies Used
-
-- Python 3
-- PyMongo
-- MongoDB
+- Python and PyMongo
+- MongoDB and MongoDB Compass
 - Scala 2.13.18
 - Apache Spark 4.2.0
 - MongoDB Spark Connector 10.6.1
-- sbt
-- IntelliJ IDEA
+- IntelliJ IDEA and sbt
 
-## Project Structure
+## Part 1: Importing and Indexing
 
-```text
-BigData-HW2-osaid/
-├── mongo.py
-├── hw2-data.csv
-├── students.json
-├── build.sbt
-├── README.md
-└── src/
-    └── main/
-        └── scala/
-            └── SparkAnalysis.scala
-```
+I read `hw2-data.csv` and converted each row into a student document. The fields include the student ID, name, date of birth, course IDs, and GPA. I stored the records in the `university` database, inside the `students` collection.
 
-## Part 1 — Importing and Indexing
+I inserted all **100 students**, created indexes on `courseIds` and `gpa`, and exported the parsed records to `students.json` (one JSON document per line).
 
-The Python program reads `hw2-data.csv` and converts each student record into a MongoDB document with the correct data types.
+## Part 2: Search by Course
 
-The records are inserted into:
+I wrote a Python query that asks the user for a course ID, checks the input, and displays matching students sorted by last name. I also checked the MongoDB execution plan for `IXSCAN`.
 
-- Database: `university`
-- Collection: `students`
+Example: course **101** returned **48 students**, and the index check returned **True**.
 
-Indexes are created on `courseIds` and `gpa`.
+## Part 3: Search by GPA
 
-**Result:** 100 student records inserted successfully.
+I added a search for students with a GPA greater than a value entered by the user. The input is validated to be between 0.0 and 4.0, and the results are sorted by GPA from highest to lowest.
 
-## Part 2 — Search by Course
+Example: GPA **greater than 3.5** returned **49 students**.
 
-The program accepts a course ID from the user and retrieves all students enrolled in that course.
+I also added an optional combined search using both course ID and minimum GPA.
 
-Results are sorted by last name, and MongoDB's execution plan is checked for index usage.
+## Part 4: Spark SQL Analysis
 
-**Example result:**
-
-- Course ID: 101
-- Matching students: 48
-- Index used: True
-
-## Part 3 — Search by GPA
-
-The program accepts a minimum GPA between 0.0 and 4.0 and displays students with a higher GPA in descending order.
-
-It also supports an optional combined search using both course ID and minimum GPA.
-
-**Example result:**
-
-- Minimum GPA: 3.5
-- Matching students: 49
-
-## Part 4 — Spark SQL Analysis
-
-Apache Spark reads the student collection directly from MongoDB using the MongoDB Spark Connector.
-
-The DataFrame is registered as a temporary SQL view named `students`.
+I connected Spark directly to the MongoDB `students` collection and registered the data as a temporary SQL view named `students`. I printed the schema to check the data types.
 
 ### 4.1 Basic Queries
 
-- Retrieve students enrolled in course 103.
-- Retrieve students with GPA greater than 3.5.
+- Found students enrolled in course **103** (**36 students**).
+- Found students with GPA greater than **3.5** (**49 students**).
 
-### 4.2 Array Operations and Statistics
+### 4.2 Course Statistics
 
-- Use `explode(courseIds)` to create an `enrollments` view.
-- Calculate enrollment count, average GPA, minimum GPA, and maximum GPA for each course.
-- Count students enrolled in one, two, or three courses.
-
-### 4.3 Advanced SQL Queries
-
-- Calculate student count and average GPA by birth year.
-- Rank students within each course using `DENSE_RANK()`.
-- Find students with matching first and last names.
-- Find students whose GPA is higher than the average GPA of every course they are enrolled in.
-
-**Handling ties:** Students with equal GPAs receive the same rank. All students in the first three ranks are included, even if this produces more than three students per course.
-
-### 4.4 Saving Results to MongoDB
-
-The course statistics are saved to a new MongoDB collection named `course_stats`.
-
-The collection is then read back using Spark to verify that the results were stored successfully.
-
-**Result:** Five course statistics records were saved and read successfully.
-
-## Course Statistics
+I used `explode(courseIds)` to create an `enrollments` view with one row for each student-course pair. Then I calculated the enrollment count, average GPA, minimum GPA, and maximum GPA for each course.
 
 | Course ID | Students | Average GPA | Min GPA | Max GPA |
 |---|---:|---:|---:|---:|
@@ -120,52 +58,49 @@ The collection is then read back using Spark to verify that the results were sto
 | 102 | 43 | 3.50 | 3.1 | 3.9 |
 | 103 | 36 | 3.39 | 3.1 | 3.9 |
 
-## How to Run
+I also counted students by how many courses they take:
 
-### Step 1 — Start MongoDB
+- **1 course:** 8 students
+- **2 courses:** 66 students
+- **3 courses:** 26 students
 
-Make sure the local MongoDB server is running at:
+### 4.3 More SQL Queries
 
-`mongodb://localhost:27017/`
+I used Spark SQL to:
 
-### Step 2 — Run the Python Program
+- Count students and calculate average GPA by birth year.
+- Find the top three **ranks** in each course using `DENSE_RANK()`. Students with the same GPA get the same rank, so a course can have more than three students in the top three ranks.
+- Find pairs of students with the same first and last name and show their IDs and birth dates.
+- Find students whose GPA is higher than the average GPA of every course they are enrolled in.
 
-Install PyMongo:
+### 4.4 Saving the Results
 
-```bash
-pip install pymongo
-```
+I saved the course statistics from Part 4.2 into a new MongoDB collection called `university.course_stats`. I then read the collection back using Spark to check that the data was saved correctly. The collection contains **5 records**, one for each course.
 
-Run:
+## Running the Project
 
-```bash
-python mongo.py
-```
+1. Start MongoDB locally at `mongodb://localhost:27017/`.
+2. Install PyMongo if needed: `pip install pymongo`.
+3. Run the Python script (`mongo.py`) from the project folder. This imports the data and runs the interactive searches.
+4. Open the project in IntelliJ IDEA and load the sbt dependencies from `build.sbt`.
+5. Run `SparkAnalysis.scala` after the MongoDB `students` collection has been populated.
 
-Enter a course ID and minimum GPA when prompted.
+The Spark program uses local mode and reads from MongoDB through the Spark connector. On Windows, the local Spark setup may also need Hadoop native utilities configured.
 
-### Step 3 — Run Spark Analysis
+## Results and Screenshots
 
-Open the project in IntelliJ IDEA with the Scala and sbt environment configured.
+- The `screenshots/` folder contains screenshots of the program outputs, organized by homework part.
+- The results PDF contains the screenshots in order, with a title for each part.
+- The screenshots show the MongoDB searches, Spark SQL results, and the saved `course_stats` collection.
 
-Make sure MongoDB is running and the `students` collection has been populated.
+## Files
 
-Run the `SparkAnalysis` main class.
+| File or folder | Description |
+|---|---|
+| `mongo.py` | Python code for Parts 1–3 |
+| `hw2-data.csv` | Original student data |
+| `students.json` | Exported student documents |
+| `build.sbt` | Scala and Spark dependencies |
+| `src/main/scala/SparkAnalysis.scala` | Scala code for Part 4 |
+| `screenshots/` | Screenshots of the results |
 
-The program will execute the Spark SQL queries, display their results, and save the course statistics to MongoDB.
-
-**Note:** On Windows, local Spark may require Hadoop native utilities to be configured.
-
-## MongoDB vs. Spark SQL
-
-MongoDB is used for storing student documents and performing indexed searches based on course IDs and GPA.
-
-Spark SQL is used for analytical operations such as grouping, aggregations, joins, array expansion, and ranking.
-
-Both systems operate on the same student dataset but serve different purposes.
-
-## Conclusion
-
-This assignment demonstrates how MongoDB and Apache Spark SQL can work together to store, retrieve, and analyze student data.
-
-All 100 student records were imported successfully, the MongoDB searches were tested, and the Spark SQL analysis was completed.
