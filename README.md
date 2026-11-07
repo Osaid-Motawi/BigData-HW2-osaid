@@ -108,4 +108,4 @@ The Spark program uses local mode and reads from MongoDB through the Spark conne
 | `mongo_results.txt` | MongoDB/Python results |
 | `spark_results.txt` | Spark SQL results |
 | `HW2_Results_Screenshots.pdf` | Screenshots of the results |
-| `HW2_Results_Screenshots.zip` | Original screenshot images |
+| `Screenshots` | Original screenshot images |
