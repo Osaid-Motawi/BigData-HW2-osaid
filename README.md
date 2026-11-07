@@ -94,7 +94,7 @@ The Spark program uses local mode and reads from MongoDB through the Spark conne
 - `mongo_results.txt` contains the Python/MongoDB query results.
 - `spark_results.txt` contains the Spark SQL output.
 - `HW2_Results_Screenshots.pdf` contains screenshots of the program outputs in order, including the MongoDB Compass verification of `course_stats`.
-- `HW2_Results_Screenshots.zip` contains the original screenshots as image files.
+- `Screenshots` contains the original screenshots as image files.
 
 ## Files
 
