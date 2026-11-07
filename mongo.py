@@ -103,7 +103,6 @@ print("Index used:", "IXSCAN" in str(explanation["queryPlanner"]["winningPlan"])
 
 print("\n===Part 3: Search by GPA===\n")
 
-
 while True:
     try:
         min_gpa = float(input("Enter minimum GPA (0.0 - 4.0): "))
