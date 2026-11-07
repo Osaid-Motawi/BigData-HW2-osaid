@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="sbt: org.mongodb.spark:mongo-spark-connector_2.13:10.6.1:jar" type="java-imported" external-system-id="SBT">
+    <properties groupId="org.mongodb.spark" artifactId="mongo-spark-connector_2.13" version="10.6.1" baseVersion="10.6.1" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/org/mongodb/spark/mongo-spark-connector_2.13/10.6.1/mongo-spark-connector_2.13-10.6.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/org/mongodb/spark/mongo-spark-connector_2.13/10.6.1/mongo-spark-connector_2.13-10.6.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

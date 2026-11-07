@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/BigData-HW2-osaid.iml" filepath="$PROJECT_DIR$/.idea/BigData-HW2-osaid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BigData-HW2-osaid/BigData-HW2-osaid.BigData-HW2-osaid-build.iml" filepath="$PROJECT_DIR$/.idea/modules/BigData-HW2-osaid/BigData-HW2-osaid.BigData-HW2-osaid-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BigData-HW2-osaid/BigData-HW2-osaid.main.iml" filepath="$PROJECT_DIR$/.idea/modules/BigData-HW2-osaid/BigData-HW2-osaid.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BigData-HW2-osaid/BigData-HW2-osaid.test.iml" filepath="$PROJECT_DIR$/.idea/modules/BigData-HW2-osaid/BigData-HW2-osaid.test.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaCompilerConfiguration">
+    <option name="separateProdTestSources" value="true" />
+    <profile name="sbt 1" modules="BigData-HW2-osaid,BigData-HW2-osaid.main,BigData-HW2-osaid.test,bigdata-hw2-osaid_7728,bigdata-hw2-osaid_7728.main,bigdata-hw2-osaid_7728.test" />
+  </component>
+</project>
