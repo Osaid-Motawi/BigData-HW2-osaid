@@ -162,9 +162,13 @@ object SparkAnalysis {
     val aboveAverage = spark.sql("""
     SELECT e.studentId, e.gpa
     FROM enrollments e
-    JOIN courseStats c ON e.courseId = c.courseId
+    JOIN (
+      SELECT courseId, AVG(gpa) AS courseAvg
+      FROM enrollments
+      GROUP BY courseId)
+      c ON e.courseId = c.courseId
     GROUP BY e.studentId, e.gpa
-    HAVING MIN(e.gpa - c.averageGpa) > 0
+    HAVING MIN(e.gpa - c.courseAvg) > 0
     ORDER BY e.studentId """)
 
     aboveAverage.show(100, false)

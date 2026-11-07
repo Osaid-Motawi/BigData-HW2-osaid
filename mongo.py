@@ -35,6 +35,8 @@ with open("hw2-data.csv", "r", encoding="utf-8") as file:
 
         students.append(student)
 
+    print("\n--- Part 1: Import Students to MongoDB ---\n")
+
     print(students[0])
     print("Total students:", len(students))
 
@@ -43,8 +45,7 @@ with open("hw2-data.csv", "r", encoding="utf-8") as file:
 db = client["university"]
 collection = db["students"]
 
-print("Connected to MongoDB")
-
+print("\nConnected to MongoDB\n")
 
 collection.drop()
 
@@ -71,7 +72,7 @@ with open("students.json", "w", encoding="utf-8") as file:
 print("students.json created successfully")
 
 
-print("\n===Part 2: Search by Course===\n")
+print("\n--- Part 2: Find Students by Course ---\n")
 
 while True:
     try:
@@ -86,7 +87,7 @@ results = collection.find({"courseIds": course_id}).sort("lastName", 1)
 count = 0
 
 for student in results:
-    print(student["_id"], student["firstName"], student["lastName"], student["gpa"])
+    print(f"ID: {student['_id']} | Name: {student['firstName']} {student['lastName']} | GPA: {student['gpa']}")
     count += 1
 
 print("Total matches:", count)
@@ -98,10 +99,10 @@ explanation = collection.database.command(
     {"find": "students", "filter": {"courseIds": course_id}}
 )
 
-print("Index used:", "IXSCAN" in str(explanation["queryPlanner"]["winningPlan"]))
+print("\nIndex used:", "IXSCAN" in str(explanation["queryPlanner"]["winningPlan"]))
+print("\nWinning plan:", explanation["queryPlanner"]["winningPlan"])
 
-
-print("\n===Part 3: Search by GPA===\n")
+print("\n--- Part 3: Find Students by GPA ---\n")
 
 while True:
     try:
@@ -115,32 +116,54 @@ while True:
     except ValueError:
         print("Invalid input. Please enter a number.")
 
-
 results = collection.find({"gpa": {"$gt": min_gpa}}).sort("gpa", -1)
 
 count = 0
 
 for student in results:
-    print(student["_id"], student["firstName"], student["lastName"], student["gpa"])
+    print(f"ID: {student['_id']} | Name: {student['firstName']} {student['lastName']} | GPA: {student['gpa']}")
     count += 1
 
 print("Total matches:", count)
 
 
-print("\n===Combined Search===\n")
 
-choice = input("Do you want a combined search? (y/n): ").lower()
+print("\n--- Combined Search: Course and GPA ---\n")
+
+choice = input("Do you want a combined search? (y/n): ").strip().lower()
 
 if choice == "y":
+
+    while True:
+        try:
+            combined_course_id = int(input("Enter course ID: "))
+            break
+        except ValueError:
+            print("Invalid input. Please enter an integer.")
+
+    while True:
+        try:
+            combined_min_gpa = float(input("Enter minimum GPA (0.0 - 4.0): "))
+
+            if 0.0 <= combined_min_gpa <= 4.0:
+                break
+            else:
+                print("GPA must be between 0.0 and 4.0")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
     results = collection.find({
-        "courseIds": course_id,
-        "gpa": {"$gt": min_gpa}
+        "courseIds": combined_course_id,
+        "gpa": {"$gt": combined_min_gpa}
     }).sort("gpa", -1)
 
     count = 0
 
     for student in results:
-        print(student["_id"], student["firstName"], student["lastName"], student["gpa"])
+        print(f"ID: {student['_id']} | Name: {student['firstName']} {student['lastName']} | GPA: {student['gpa']}")
         count += 1
 
-print("Total matches:", count)
+    print("Total matches:", count)
+
+else:
+    print("Combined search skipped.")
