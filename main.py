@@ -144,4 +144,4 @@ if choice == "y":
         print(student["_id"], student["firstName"], student["lastName"], student["gpa"])
         count += 1
 
-    print("Total matches:", count)
+print("Total matches:", count)
