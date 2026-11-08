@@ -31,7 +31,7 @@ object P2CourseSearch {
             validInput = true
 
           case None =>
-            println("Invalid input. Please enter an integer.")
+            println("Invalid input Please enter an integer")
         }
       }
 
@@ -48,12 +48,7 @@ object P2CourseSearch {
 
           val student: Document = cursor.next()
 
-          println(
-            s"ID: ${student.getInteger("_id")} | " +
-              s"Name: ${student.getString("firstName")} " +
-              s"${student.getString("lastName")} | " +
-              s"GPA: ${student.getDouble("gpa")}"
-          )
+          println( s"ID: ${student.getInteger("_id")} | " + s"Name: ${student.getString("firstName")} " + s"${student.getString("lastName")} | " + s"GPA: ${student.getDouble("gpa")}" )
 
           count += 1
         }
@@ -82,6 +77,6 @@ object P2CourseSearch {
 
     } finally {
       client.close()
-    }
-  }
+ }
+}
 }
