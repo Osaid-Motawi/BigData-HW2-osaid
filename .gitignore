@@ -9,16 +9,22 @@
 
 # Scala / sbt
 target/
-project/target/
-project/project/
+**/target/
 .bsp/
 .bloop/
 .metals/
 
+# Console output files
+/P1StudentImport
+/P2CourseSearch
+/P3GpaSearch
+/P4SparkAnalysis
+
 # Sensitive files
 *.pem
 *.key
+*.log
 
-# System files
+# Operating system files
 .DS_Store
 Thumbs.db
