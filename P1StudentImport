@@ -1,0 +1,14 @@
+
+--- Part 1: Import Students to MongoDB ---
+
+{"_id": 1, "firstName": "Alice", "lastName": "Johnson", "dateOfBirth": {"$date": "1998-03-15T00:00:00Z"}, "courseIds": [101, 102, 103], "gpa": 3.8}
+Total students: 100
+
+Connected to MongoDB
+
+Inserted students: 100
+Indexes:
+_id_
+courseIds_1
+gpa_1
+students.json created successfully

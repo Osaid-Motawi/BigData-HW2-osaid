@@ -1,0 +1,44 @@
+
+--- Part 2: Find Students by Course ---
+
+Enter course ID: ID: 22 | Name: Victoria Anderson | GPA: 3.1
+ID: 51 | Name: Yasmine Baker | GPA: 3.1
+ID: 41 | Name: Olivia Bell | GPA: 3.4
+ID: 87 | Name: Isabella Bell | GPA: 3.1
+ID: 96 | Name: Rachel Brooks | GPA: 3.5
+ID: 36 | Name: James Brooks | GPA: 3.5
+ID: 17 | Name: Quinn Brown | GPA: 3.6
+ID: 48 | Name: Victoria Butler | GPA: 3.5
+ID: 81 | Name: Chloe Butler | GPA: 3.9
+ID: 99 | Name: Uriel Cook | GPA: 3.1
+ID: 58 | Name: Felix Cook | GPA: 3.1
+ID: 25 | Name: Yasmine Cooper | GPA: 3.2
+ID: 5 | Name: Eric Davis | GPA: 3.1
+ID: 19 | Name: Samuel Evans | GPA: 3.8
+ID: 39 | Name: Mia Fisher | GPA: 3.1
+ID: 49 | Name: William Fisher | GPA: 3.2
+ID: 72 | Name: Taylor Fisher | GPA: 3.5
+ID: 45 | Name: Samuel Foster | GPA: 3.9
+ID: 53 | Name: Ava Gonzalez | GPA: 3.4
+ID: 74 | Name: Victoria Gonzalez | GPA: 3.9
+ID: 12 | Name: Liam Hall | GPA: 3.2
+ID: 34 | Name: Henry Hall | GPA: 3.1
+ID: 60 | Name: Henry Howard | GPA: 3.5
+ID: 14 | Name: Noah Johnson | GPA: 3.1
+ID: 1 | Name: Alice Johnson | GPA: 3.8
+ID: 8 | Name: Hannah Lee | GPA: 3.6
+ID: 65 | Name: Mia Lopez | GPA: 3.4
+ID: 84 | Name: Felix Parker | GPA: 3.5
+ID: 27 | Name: Ava Parker | GPA: 3.1
+ID: 69 | Name: Quinn Reed | GPA: 3.9
+ID: 29 | Name: Chloe Reed | GPA: 3.4
+ID: 63 | Name: Katherine Stewart | GPA: 3.1
+ID: 91 | Name: Mia Ward | GPA: 3.8
+ID: 3 | Name: Charlie Williams | GPA: 3.2
+ID: 77 | Name: Yasmine Young | GPA: 3.4
+ID: 94 | Name: Peter Young | GPA: 3.1
+Total matches: 36
+
+Index used: true
+
+Winning plan: {"isCached": false, "stage": "FETCH", "nss": "university.students", "inputStage": {"stage": "IXSCAN", "nss": "university.students", "keyPattern": {"courseIds": 1}, "indexName": "courseIds_1", "isMultiKey": true, "multiKeyPaths": {"courseIds": ["courseIds"]}, "isUnique": false, "isSparse": false, "isPartial": false, "indexVersion": 2, "direction": "forward", "indexBounds": {"courseIds": ["[103, 103]"]}}}

@@ -1,7 +1,7 @@
 
 import org.apache.spark.sql.SparkSession
 
-object SparkAnalysis {
+object P4SparkAnalysis {
 
   def main(args: Array[String]): Unit = {
 

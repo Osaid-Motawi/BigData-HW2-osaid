@@ -1,4 +1,49 @@
-
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/11/08 16:17:28 INFO SparkContext: Running Spark version 4.2.0
+26/11/08 16:17:28 INFO SparkContext: OS info Windows 11, 10.0, amd64
+26/11/08 16:17:28 INFO SparkContext: Java version 21.0.12.1+1-LTS-4
+26/11/08 16:17:28 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+26/11/08 16:17:28 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/11/08 16:17:28 INFO ResourceUtils: ==============================================================
+26/11/08 16:17:28 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/11/08 16:17:28 INFO ResourceUtils: ==============================================================
+26/11/08 16:17:28 INFO SparkContext: Submitted application: StudentAnalysis
+26/11/08 16:17:28 INFO SecurityManager: Changing view acls to: osaid
+26/11/08 16:17:28 INFO SecurityManager: Changing modify acls to: osaid
+26/11/08 16:17:28 INFO SecurityManager: Changing view acls groups to: osaid
+26/11/08 16:17:28 INFO SecurityManager: Changing modify acls groups to: osaid
+26/11/08 16:17:28 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: osaid groups with view permissions: EMPTY; users with modify permissions: osaid; groups with modify permissions: EMPTY; RPC SSL disabled
+26/11/08 16:17:28 INFO Utils: Successfully started service 'sparkDriver' on port 50668.
+26/11/08 16:17:28 INFO SparkEnv: Registering MapOutputTracker
+26/11/08 16:17:28 INFO SparkEnv: Registering BlockManagerMaster
+26/11/08 16:17:28 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/11/08 16:17:28 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/11/08 16:17:28 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/11/08 16:17:28 INFO DiskBlockManager: Created local directory at C:\Users\osaid\AppData\Local\Temp\blockmgr-3ba7a3dc-d023-497b-baae-a355e8895a86
+26/11/08 16:17:28 INFO SparkEnv: Registering OutputCommitCoordinator
+26/11/08 16:17:28 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/11/08 16:17:28 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/11/08 16:17:29 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/11/08 16:17:29 INFO ResourceProfile: Limiting resource is cpu
+26/11/08 16:17:29 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/11/08 16:17:29 INFO SecurityManager: Changing view acls to: osaid
+26/11/08 16:17:29 INFO SecurityManager: Changing modify acls to: osaid
+26/11/08 16:17:29 INFO SecurityManager: Changing view acls groups to: osaid
+26/11/08 16:17:29 INFO SecurityManager: Changing modify acls groups to: osaid
+26/11/08 16:17:29 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: osaid groups with view permissions: EMPTY; users with modify permissions: osaid; groups with modify permissions: EMPTY; RPC SSL disabled
+26/11/08 16:17:29 INFO Executor: Starting executor ID driver on host OSAID
+26/11/08 16:17:29 INFO Executor: Running Spark version 4.2.0
+26/11/08 16:17:29 INFO Executor: OS info Windows 11, 10.0, amd64
+26/11/08 16:17:29 INFO Executor: Java version 21.0.12.1+1-LTS-4
+26/11/08 16:17:29 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/11/08 16:17:29 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@18026052 for default.
+26/11/08 16:17:29 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 50669.
+26/11/08 16:17:29 INFO NettyBlockTransferService: Server created on OSAID:50669
+26/11/08 16:17:29 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/11/08 16:17:29 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, OSAID, 50669, None)
+26/11/08 16:17:29 INFO BlockManagerMasterEndpoint: Registering block manager OSAID:50669 with 4.5 GiB RAM, BlockManagerId(driver, OSAID, 50669, None)
+26/11/08 16:17:29 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, OSAID, 50669, None)
+26/11/08 16:17:29 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, OSAID, 50669, None)
 Total students: 100
 root
  |-- _id: integer (nullable = true)
@@ -339,10 +384,10 @@ Reading Course Statistics from MongoDB:
 +------------------------+----------+--------+---------------+------+------+
 |_id                     |averageGpa|courseId|enrollmentCount|maxGpa|minGpa|
 +------------------------+----------+--------+---------------+------+------+
-|6aef7ce6b0d38509c14264b0|3.56      |101     |48             |3.9   |3.1   |
-|6aef7ce6b0d38509c14264b1|3.5       |105     |47             |3.9   |3.1   |
-|6aef7ce6b0d38509c14264b2|3.59      |104     |44             |3.9   |3.1   |
-|6aef7ce6b0d38509c14264b3|3.5       |102     |43             |3.9   |3.1   |
-|6aef7ce6b0d38509c14264b4|3.39      |103     |36             |3.9   |3.1   |
+|6af084835c29fc183786c1d8|3.56      |101     |48             |3.9   |3.1   |
+|6af084835c29fc183786c1d9|3.5       |105     |47             |3.9   |3.1   |
+|6af084835c29fc183786c1da|3.59      |104     |44             |3.9   |3.1   |
+|6af084835c29fc183786c1db|3.5       |102     |43             |3.9   |3.1   |
+|6af084835c29fc183786c1dc|3.39      |103     |36             |3.9   |3.1   |
 +------------------------+----------+--------+---------------+------+------+
 

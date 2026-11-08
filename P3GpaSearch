@@ -1,0 +1,81 @@
+
+--- Part 3: Find Students by GPA ---
+
+Enter minimum GPA (0.0 - 4.0): ID: 98 | Name: Taylor Perez | GPA: 3.9
+ID: 93 | Name: Olivia Baker | GPA: 3.9
+ID: 86 | Name: Henry Gonzalez | GPA: 3.9
+ID: 81 | Name: Chloe Butler | GPA: 3.9
+ID: 74 | Name: Victoria Gonzalez | GPA: 3.9
+ID: 69 | Name: Quinn Reed | GPA: 3.9
+ID: 62 | Name: James Hill | GPA: 3.9
+ID: 57 | Name: Emma Hall | GPA: 3.9
+ID: 50 | Name: Xavier Perez | GPA: 3.9
+ID: 45 | Name: Samuel Foster | GPA: 3.9
+ID: 38 | Name: Liam Roberts | GPA: 3.9
+ID: 33 | Name: Grace Russell | GPA: 3.9
+ID: 26 | Name: Zachary Lewis | GPA: 3.9
+ID: 21 | Name: Uriel Moore | GPA: 3.9
+ID: 13 | Name: Mia Evans | GPA: 3.9
+ID: 4 | Name: Diana Miller | GPA: 3.9
+ID: 91 | Name: Mia Ward | GPA: 3.8
+ID: 79 | Name: Ava Gonzalez | GPA: 3.8
+ID: 67 | Name: Olivia Young | GPA: 3.8
+ID: 55 | Name: Chloe Adams | GPA: 3.8
+ID: 43 | Name: Quinn Cooper | GPA: 3.8
+ID: 31 | Name: Emma Turner | GPA: 3.8
+ID: 19 | Name: Samuel Evans | GPA: 3.8
+ID: 10 | Name: Jack Clark | GPA: 3.8
+ID: 1 | Name: Alice Johnson | GPA: 3.8
+ID: 100 | Name: Victoria Fisher | GPA: 3.7
+ID: 95 | Name: Quinn Ward | GPA: 3.7
+ID: 88 | Name: James Stewart | GPA: 3.7
+ID: 83 | Name: Emma Adams | GPA: 3.7
+ID: 76 | Name: Xavier Reed | GPA: 3.7
+ID: 71 | Name: Samuel Moore | GPA: 3.7
+ID: 64 | Name: Liam Fisher | GPA: 3.7
+ID: 59 | Name: Grace Fisher | GPA: 3.7
+ID: 52 | Name: Zachary Murphy | GPA: 3.7
+ID: 47 | Name: Uriel Martin | GPA: 3.7
+ID: 40 | Name: Nathan Young | GPA: 3.7
+ID: 35 | Name: Isabella Perez | GPA: 3.7
+ID: 28 | Name: Benjamin Ward | GPA: 3.7
+ID: 23 | Name: William Thomas | GPA: 3.7
+ID: 15 | Name: Olivia Smith | GPA: 3.7
+ID: 6 | Name: Fiona Moore | GPA: 3.7
+ID: 90 | Name: Liam Hall | GPA: 3.6
+ID: 78 | Name: Zachary Howard | GPA: 3.6
+ID: 66 | Name: Nathan Reed | GPA: 3.6
+ID: 54 | Name: Benjamin Evans | GPA: 3.6
+ID: 42 | Name: Peter Williams | GPA: 3.6
+ID: 30 | Name: Daniel Murphy | GPA: 3.6
+ID: 17 | Name: Quinn Brown | GPA: 3.6
+ID: 8 | Name: Hannah Lee | GPA: 3.6
+Total matches: 49
+
+--- Combined Search: Course and GPA ---
+
+Do you want a combined search? (y/n): Enter course ID: Enter minimum GPA (0.0 - 4.0): ID: 93 | Name: Olivia Baker | GPA: 3.9
+ID: 81 | Name: Chloe Butler | GPA: 3.9
+ID: 74 | Name: Victoria Gonzalez | GPA: 3.9
+ID: 62 | Name: James Hill | GPA: 3.9
+ID: 57 | Name: Emma Hall | GPA: 3.9
+ID: 45 | Name: Samuel Foster | GPA: 3.9
+ID: 38 | Name: Liam Roberts | GPA: 3.9
+ID: 33 | Name: Grace Russell | GPA: 3.9
+ID: 21 | Name: Uriel Moore | GPA: 3.9
+ID: 4 | Name: Diana Miller | GPA: 3.9
+ID: 91 | Name: Mia Ward | GPA: 3.8
+ID: 55 | Name: Chloe Adams | GPA: 3.8
+ID: 43 | Name: Quinn Cooper | GPA: 3.8
+ID: 31 | Name: Emma Turner | GPA: 3.8
+ID: 19 | Name: Samuel Evans | GPA: 3.8
+ID: 10 | Name: Jack Clark | GPA: 3.8
+ID: 1 | Name: Alice Johnson | GPA: 3.8
+ID: 95 | Name: Quinn Ward | GPA: 3.7
+ID: 83 | Name: Emma Adams | GPA: 3.7
+ID: 76 | Name: Xavier Reed | GPA: 3.7
+ID: 64 | Name: Liam Fisher | GPA: 3.7
+ID: 47 | Name: Uriel Martin | GPA: 3.7
+ID: 40 | Name: Nathan Young | GPA: 3.7
+ID: 23 | Name: William Thomas | GPA: 3.7
+Total matches: 24
