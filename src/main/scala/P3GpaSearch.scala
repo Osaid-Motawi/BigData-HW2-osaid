@@ -34,7 +34,7 @@ object P3GpaSearch {
             println("GPA must be between 0.0 and 4.0")
 
           case None =>
-            println("Invalid input. Please enter a number.")
+            println("Invalid input Please enter a number")
         }
       }
 
@@ -51,12 +51,7 @@ object P3GpaSearch {
 
           val student: Document = cursor.next()
 
-          println(
-            s"ID: ${student.getInteger("_id")} | " +
-              s"Name: ${student.getString("firstName")} " +
-              s"${student.getString("lastName")} | " +
-              s"GPA: ${student.getDouble("gpa")}"
-          )
+          println( s"ID: ${student.getInteger("_id")} | " + s"Name: ${student.getString("firstName")} " + s"${student.getString("lastName")} | " + s"GPA: ${student.getDouble("gpa")}" )
 
           count += 1
         }
@@ -88,7 +83,7 @@ object P3GpaSearch {
               validInput = true
 
             case None =>
-              println("Invalid input. Please enter an integer.")
+              println("Invalid input Please enter an integer")
           }
         }
 
@@ -109,7 +104,7 @@ object P3GpaSearch {
               println("GPA must be between 0.0 and 4.0")
 
             case None =>
-              println("Invalid input. Please enter a number.")
+              println("Invalid input Please enter a number")
           }
         }
 
@@ -127,12 +122,7 @@ object P3GpaSearch {
 
             val student: Document = combinedCursor.next()
 
-            println(
-              s"ID: ${student.getInteger("_id")} | " +
-                s"Name: ${student.getString("firstName")} " +
-                s"${student.getString("lastName")} | " +
-                s"GPA: ${student.getDouble("gpa")}"
-            )
+            println(s"ID: ${student.getInteger("_id")} | " + s"Name: ${student.getString("firstName")} " + s"${student.getString("lastName")} | " + s"GPA: ${student.getDouble("gpa")}")
 
             count += 1
           }
@@ -143,7 +133,7 @@ object P3GpaSearch {
         println("Total matches: " + count)
 
       } else {
-        println("Combined search skipped.")
+        println("Combined search skipped")
       }
 
     } finally {
