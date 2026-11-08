@@ -20,11 +20,8 @@ BigData-HW2-osaid/
 │   ├── P2CourseSearch.scala
 │   ├── P3GpaSearch.scala
 │   └── P4SparkAnalysis.scala
-└── docs/
-    └── HW2_Scala_Results.pdf
 ```
 
-The `docs/` path is suggested for the evidence PDF. Generated `students.json` can be included if required by the assignment.
 
 ## Requirements
 
@@ -92,4 +89,4 @@ The `.gitignore` excludes `.env` and typical IDE/build artifacts. If a secret wa
 
 ## Evidence
 
-See `docs/HW2_Scala_Results.pdf` for the cover page and **17 screenshots** documenting all four parts and MongoDB Compass verification.
+See `HW2_Scala_Results.pdf` in moodle for the cover page and **17 screenshots** documenting all four parts and MongoDB Compass verification.
