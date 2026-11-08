@@ -12,7 +12,8 @@ target/
 **/target/
 .bsp/
 .bloop/
-.metals/
+.metals/  
+
 
 # Console output files
 /P1StudentImport
